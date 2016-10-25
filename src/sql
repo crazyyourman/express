@@ -1,0 +1,40 @@
+CREATE TABLE  `user` (   
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,   
+  `name` varchar(45) NOT NULL,   
+  `psw` varchar(45) NOT NULL,   
+  PRIMARY KEY (`id`)   
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+type 为1 为国内
+type 为 2 为国外
+type 为3  为订单接口调用状态
+
+create table order_status(
+id int  auto_increment ,
+nu int,
+name varchar(30),
+create_date timestamp,
+type int,
+primary key(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+orderId 业务订单号
+nu 快递100上的订单号，国内订单号
+state 目前状态
+type 1 国内
+	 2 国外
+	 3 结果状态
+
+
+create table orders(
+id int auto_increment ,
+orderId varchar(40),
+com varchar(40),
+nu varchar(40),
+time TIMESTAMP,
+context varchar(100),
+state int,
+type int,
+create_date timestamp,
+primary key(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
